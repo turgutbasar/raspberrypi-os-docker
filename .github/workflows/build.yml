@@ -54,7 +54,7 @@ jobs:
         with:
           push: true
           pull: true
-          platforms: linux/arm64,linux/arm/v6
+          platforms: linux/arm/v6
           tags: |
             ${{ steps.vars.outputs.gh-repo }}:${{ join(matrix.tags, format(',{0}:', steps.vars.outputs.gh-repo)) }},
             ${{ steps.vars.outputs.dh-repo }}:${{ join(matrix.tags, format(',{0}:', steps.vars.outputs.dh-repo)) }}
