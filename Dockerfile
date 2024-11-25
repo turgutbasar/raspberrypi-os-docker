@@ -9,6 +9,7 @@ RUN dpkg --add-architecture armhf \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        libc6 \
         libraspberrypi0 \
         libraspberrypi-bin \
     && rm -rf /var/lib/apt/lists/*
