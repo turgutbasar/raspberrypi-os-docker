@@ -4,7 +4,7 @@ FROM $BASE_CONTAINER
 COPY image/ /
 
 RUN dpkg --add-architecture armhf \
-    && echo "deb http://archive.raspberrypi.org/debian/ $(sh -c '. /etc/os-release; echo $VERSION_CODENAME') main" \
+    && echo "deb [arch=armhf] http://archive.raspberrypi.org/debian/ $(sh -c '. /etc/os-release; echo $VERSION_CODENAME') main" \
         > /etc/apt/sources.list.d/raspi.list \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
